@@ -46,11 +46,11 @@ NSMenuItem *show24HrTimeItem;
     NSInteger state = [sender state];
     LaunchAtLoginController *launchController = [[LaunchAtLoginController alloc] init];
 
-    if (state == NSOffState) {
-        [sender setState:NSOnState];
+    if (state == NSControlStateValueOff) {
+        [sender setState:NSControlStateValueOn];
         [launchController setLaunchAtLogin:YES];
     } else {
-        [sender setState:NSOffState];
+        [sender setState:NSControlStateValueOff];
         [launchController setLaunchAtLogin:NO];
     }
 
@@ -68,11 +68,11 @@ NSMenuItem *show24HrTimeItem;
     NSString *preference = [sender representedObject];
     NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
 
-    if (state == NSOffState) {
-        [sender setState:NSOnState];
+    if (state == NSControlStateValueOff) {
+        [sender setState:NSControlStateValueOn];
         [standardUserDefaults setBool:TRUE forKey:preference];
     } else {
-        [sender setState:NSOffState];
+        [sender setState:NSControlStateValueOff];
         [standardUserDefaults setBool:FALSE forKey:preference];
     }
 
